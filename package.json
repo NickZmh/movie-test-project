@@ -21,9 +21,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "test --watch=false",
+    "test": "test",
     "eject": "react-scripts eject",
-    "format": "prettier --write \"src/**/*.{js,jsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -75,7 +75,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm format"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "prettier --write"
+    ]
   }
 }
