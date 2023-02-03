@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier . --write",
+    "format": "prettier --write \"src/**/*.{js,jsx,json,md}\"",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -79,6 +79,8 @@
     }
   },
   "lint-staged": {
-		"*.{js,css,md,html,json}": "npm run format"
-	}
+    "src/**/*.{js,jsx}": [
+      "prettier --write"
+    ]
+  }
 }
